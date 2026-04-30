@@ -53,14 +53,14 @@ const Login = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-l from-[#174336] via-[#203a43] to-[#174336] p-6">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#020202] p-6">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative bg-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-2xl max-w-lg w-full p-8 sm:p-10"
+        className="relative bg-zinc-950/80 backdrop-blur-2xl border border-zinc-800 rounded-3xl shadow-2xl max-w-lg w-full p-8 sm:p-10"
       >
-        <h2 className="text-xl md:text-3xl  font-extrabold text-center bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent mb-6">
+        <h2 className="text-xl md:text-3xl  font-extrabold text-center text-zinc-100 mb-6">
           Login to Your Account
         </h2>
 
@@ -91,7 +91,7 @@ const Login = () => {
             whileTap={{ scale: 0.97 }}
             type="submit"
             disabled={loginLoading}
-            className="w-full py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-400 text-gray-900 font-bold shadow-lg hover:from-cyan-600 hover:to-teal-500 transition-all disabled:opacity-50"
+            className="w-full py-3 rounded-2xl bg-zinc-800 text-gray-100 font-bold shadow-lg hover:bg-zinc-700 transition-all disabled:opacity-50"
           >
             {loginLoading ? (
               <span className="flex items-center justify-center gap-2">
@@ -108,7 +108,7 @@ const Login = () => {
           Don’t have an account?{" "}
           <Link
             to="/signup"
-            className="text-cyan-400 font-semibold hover:underline"
+            className="text-zinc-300 font-semibold hover:text-white hover:underline"
           >
             Sign Up
           </Link>
@@ -124,15 +124,15 @@ const Input = ({ label, type = "text", error, icon, ...props }) => (
       {label}
     </label>
     <div className="relative">
-      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-cyan-300">
+      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
         {icon}
       </span>
       <input
         type={type}
         {...props}
-        className={`w-full p-3 pl-10 rounded-lg bg-gray-900/40 border ${
+        className={`w-full p-3 pl-10 rounded-2xl bg-zinc-900 border ${
           error ? "border-red-400" : "border-white/20"
-        } text-gray-100 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 placeholder-gray-400 transition-all`}
+        } text-gray-100 focus:ring-2 focus:ring-zinc-500 focus:border-zinc-500 placeholder-gray-500 transition-all`}
       />
     </div>
     {error && <p className="text-red-400 text-xs mt-1">{error}</p>}

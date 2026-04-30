@@ -22,7 +22,7 @@ const VideoList = () => {
     );
 
   return (
-    <div className="min-h-screen pb-20 bg-[#111827] p-6">
+    <div className="min-h-screen pb-20 bg-[#030303] p-6">
       <h2 className="text-2xl text-white font-bold mb-6">All Videos</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {videos.map((video) => (

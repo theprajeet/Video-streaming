@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaHeart, FaEye, FaCommentDots } from "react-icons/fa";
+import { FiHeart, FiEye, FiMessageSquare } from "react-icons/fi";
 
 const UserSavedVideos = () => {
   const { currentUser } = useSelector((state) => state.user);
@@ -18,7 +18,7 @@ const UserSavedVideos = () => {
           key={video._id}
           whileHover={{ scale: 1.04 }}
           transition={{ duration: 0.3 }}
-          className="rounded-xl overflow-hidden bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#0f2027] border border-gray-800 shadow-md hover:shadow-2xl hover:border-blue-500 transition-all duration-300 cursor-pointer"
+          className="rounded-3xl overflow-hidden bg-zinc-950 border border-zinc-800 shadow-md hover:shadow-2xl hover:border-zinc-600 transition-all duration-300 cursor-pointer"
         >
           {/* Thumbnail */}
           <Link to={`/video/${video._id}`}>
@@ -26,14 +26,14 @@ const UserSavedVideos = () => {
               <img
                 src={video.thumbnailUrl}
                 alt={video.title}
-                className="absolute inset-0 w-full h-full object-contain"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
           </Link>
 
           {/* Video Info */}
           <div className="p-4">
-            <h3 className="text-lg font-semibold mb-2 text-white line-clamp-2 hover:text-blue-400 transition-colors">
+            <h3 className="text-lg font-semibold mb-2 text-white line-clamp-2 hover:text-zinc-300 transition-colors">
               {video.title}
             </h3>
 
@@ -57,13 +57,13 @@ const UserSavedVideos = () => {
             {/* Stats */}
             <div className="flex justify-between text-sm text-gray-400">
               <span className="flex items-center gap-1">
-                <FaHeart className="text-pink-500" /> {video.likesCount || 0}
+                <FiHeart className="text-zinc-300" /> {video.likesCount || 0}
               </span>
               <span className="flex items-center gap-1">
-                <FaEye className="text-blue-400" /> {video.views || 0}
+                <FiEye className="text-zinc-300" /> {video.views || 0}
               </span>
               <span className="flex items-center gap-1">
-                <FaCommentDots className="text-green-400" /> {video.commentsCount || 0}
+                <FiMessageSquare className="text-zinc-300" /> {video.commentsCount || 0}
               </span>
             </div>
           </div>

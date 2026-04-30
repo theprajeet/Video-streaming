@@ -1,1 +1,136 @@
 @import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  background: #020202;
+  color: #e5e7eb;
+}
+
+/* Global dark theme surfaces */
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+.bg-gray-200,
+.bg-gray-300,
+.bg-slate-50,
+.bg-slate-100,
+.bg-slate-200 {
+  background-color: #0b0b0b !important;
+}
+
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900,
+.bg-zinc-800,
+.bg-zinc-900,
+.bg-black {
+  background-color: #050505 !important;
+}
+
+/* Replace strong blue/yellow accents with subtle graphite accent */
+.bg-blue-50,
+.bg-blue-100,
+.bg-blue-200,
+.bg-blue-300,
+.bg-blue-400,
+.bg-blue-500,
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900,
+.bg-yellow-50,
+.bg-yellow-100,
+.bg-yellow-200,
+.bg-yellow-300,
+.bg-yellow-400,
+.bg-yellow-500,
+.bg-yellow-600,
+.bg-yellow-700,
+.bg-yellow-800,
+.bg-yellow-900 {
+  background-color: #1a1a1a !important;
+}
+
+.text-blue-300,
+.text-blue-400,
+.text-blue-500,
+.text-blue-600,
+.text-blue-700,
+.text-yellow-300,
+.text-yellow-400,
+.text-yellow-500,
+.text-yellow-600,
+.text-yellow-700 {
+  color: #cbd5e1 !important;
+}
+
+.hover\:text-blue-300:hover,
+.hover\:text-blue-400:hover,
+.hover\:text-blue-500:hover,
+.hover\:text-blue-600:hover,
+.hover\:text-yellow-300:hover,
+.hover\:text-yellow-400:hover,
+.hover\:text-yellow-500:hover {
+  color: #f3f4f6 !important;
+}
+
+.hover\:bg-blue-400:hover,
+.hover\:bg-blue-500:hover,
+.hover\:bg-blue-600:hover,
+.hover\:bg-yellow-400:hover,
+.hover\:bg-yellow-500:hover,
+.hover\:bg-yellow-600:hover {
+  background-color: #232323 !important;
+}
+
+.border-blue-400,
+.border-blue-500,
+.border-blue-600,
+.border-yellow-400,
+.border-yellow-500,
+.border-yellow-600,
+.focus\:ring-blue-500:focus,
+.focus\:ring-yellow-500:focus {
+  border-color: #303030 !important;
+  --tw-ring-color: rgba(120, 120, 120, 0.45) !important;
+}
+
+/* Rounder corners across controls/cards */
+.rounded-sm {
+  border-radius: 0.6rem !important;
+}
+.rounded {
+  border-radius: 0.75rem !important;
+}
+.rounded-md {
+  border-radius: 0.9rem !important;
+}
+.rounded-lg {
+  border-radius: 1.1rem !important;
+}
+.rounded-xl {
+  border-radius: 1.35rem !important;
+}
+.rounded-2xl {
+  border-radius: 1.7rem !important;
+}
+.rounded-3xl {
+  border-radius: 2rem !important;
+}
+
+/* Kill leftover gradient utility backgrounds for consistent dark theme */
+.bg-gradient-to-r,
+.bg-gradient-to-l,
+.bg-gradient-to-b,
+.bg-gradient-to-t,
+.bg-gradient-to-br,
+.bg-gradient-to-bl,
+.bg-gradient-to-tr,
+.bg-gradient-to-tl {
+  background-image: none !important;
+}

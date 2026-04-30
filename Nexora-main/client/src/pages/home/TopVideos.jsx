@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTopVideosThunk } from "../../redux/slices/videoSlice";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaHeart, FaEye, FaCommentDots } from "react-icons/fa";
+import { FiHeart, FiEye, FiMessageSquare } from "react-icons/fi";
 
 const TopVideos = () => {
   const dispatch = useDispatch();
@@ -24,14 +24,14 @@ const TopVideos = () => {
     return <div className="text-center text-red-500 mt-10">{error}</div>;
 
   const sections = [
-    { title: "🔥 Top Videos", data: topVideos },
-    { title: "❤️ Most Liked", data: topByLikes },
-    { title: "👀 Most Viewed", data: topByViews },
-    { title: "💬 Most Commented", data: topByComments },
+    { title: "Top Videos", data: topVideos },
+    { title: "Most Liked", data: topByLikes },
+    { title: "Most Viewed", data: topByViews },
+    { title: "Most Commented", data: topByComments },
   ];
 
   return (
-    <div className="min-h-screen bg-[#111827] text-white px-6 py-10">
+    <div className="min-h-screen bg-[#030303] text-white px-6 py-10">
      
 
       {sections.map(
@@ -39,7 +39,7 @@ const TopVideos = () => {
           section.data?.length > 0 && (
             <div key={index} className="mb-14">
               {/* Section Title */}
-              <h2 className="text-2xl font-semibold mb-6 border-l-4 border-blue-500 pl-3">
+              <h2 className="text-2xl font-semibold mb-6 border-l-4 border-zinc-600 pl-3">
                 {section.title}
               </h2>
 
@@ -50,7 +50,7 @@ const TopVideos = () => {
                     key={video._id}
                     whileHover={{ scale: 1.04 }}
                     transition={{ duration: 0.3 }}
-                    className="rounded-xl overflow-hidden bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#0f2027] border border-gray-800 shadow-md hover:shadow-2xl hover:border-blue-500 transition-all duration-300 cursor-pointer"
+                    className="rounded-3xl overflow-hidden bg-zinc-950 border border-zinc-800 shadow-md hover:shadow-2xl hover:border-zinc-600 transition-all duration-300 cursor-pointer"
                   >
                     {/* Thumbnail */}
                     <Link to={`/video/${video._id}`}>
@@ -58,14 +58,14 @@ const TopVideos = () => {
                         <img
                           src={video.thumbnailUrl}
                           alt={video.title}
-                          className="absolute inset-0 w-full h-full object-contain "
+                          className="absolute inset-0 w-full h-full object-cover"
                         />
                       </div>
                     </Link>
 
                     {/* Video Info */}
                     <div className="p-4">
-                      <h3 className="text-lg font-semibold mb-2 text-white line-clamp-2 hover:text-blue-400 transition-colors">
+                      <h3 className="text-lg font-semibold mb-2 text-white line-clamp-2 hover:text-zinc-300 transition-colors">
                         {video.title}
                       </h3>
 
@@ -86,14 +86,14 @@ const TopVideos = () => {
                       {/* Stats */}
                       <div className="flex justify-between text-sm text-gray-400">
                         <span className="flex items-center gap-1">
-                          <FaHeart className="text-pink-500" />{" "}
+                          <FiHeart className="text-zinc-300" />{" "}
                           {video.likesCount}
                         </span>
                         <span className="flex items-center gap-1">
-                          <FaEye className="text-blue-400" /> {video.views}
+                          <FiEye className="text-zinc-300" /> {video.views}
                         </span>
                         <span className="flex items-center gap-1">
-                          <FaCommentDots className="text-green-400" />{" "}
+                          <FiMessageSquare className="text-zinc-300" />{" "}
                           {video.commentsCount}
                         </span>
                       </div>

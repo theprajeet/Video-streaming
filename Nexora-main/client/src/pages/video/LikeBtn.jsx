@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import { FaThumbsUp, FaRegThumbsUp } from "react-icons/fa";
+import { FiThumbsUp } from "react-icons/fi";
 import { toggleLike } from "../../redux/slices/videoSlice";
 
 const LikeBtn = () => {
@@ -56,19 +56,19 @@ const handleLike = async () => {
 
 
 return (
-    <button
+    <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={handleLike}
       disabled={localLoading || loading}
       className={`flex items-center gap-2 px-3 py-1 rounded-full transition-colors duration-200 ${
-        liked ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-400 hover:bg-blue-500"
+        liked ? "bg-zinc-700 text-white" : "bg-zinc-900 text-gray-300 hover:bg-zinc-800"
       } ${localLoading ? "opacity-50 cursor-not-allowed" : ""}`}
       aria-label={liked ? "Unlike video" : "Like video"}
     >
-      {liked ? <FaThumbsUp className="text-lg" /> : <FaRegThumbsUp className="text-lg" />}
+      <FiThumbsUp className={`text-lg ${liked ? "opacity-100" : "opacity-85"}`} />
       <span className="font-medium">{likesCount}</span>
-    </button>
+    </motion.button>
   );
 
  

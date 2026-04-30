@@ -29,7 +29,7 @@ const AllSubscriptions = () => {
         {subscribedCreators?.map((creator) => (
           <div
             key={creator._id}
-            className="bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#0f2027] rounded-lg shadow-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform"
+            className="bg-zinc-950 border border-zinc-800 rounded-3xl shadow-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform"
             onClick={() => navigate(`/creator/${creator._id}`)}
           >
             <div className="flex flex-col items-center p-6">

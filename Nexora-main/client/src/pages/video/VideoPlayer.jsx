@@ -132,7 +132,7 @@ export default function VideoPlayer() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="p-4 sm:p-6 max-w-4xl mx-auto w-full bg-red-200 border-l-4 border-red-700 text-red-900 rounded-lg shadow-md"
+        className="p-4 sm:p-6 max-w-4xl mx-auto w-full bg-red-950/50 border border-red-700 text-red-200 rounded-2xl shadow-md"
       >
         <p className="font-medium text-center">Error: {error}</p>
       </motion.div>
@@ -144,7 +144,7 @@ export default function VideoPlayer() {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen pb-20 bg-gradient-to-br from-slate-800 to-gray-900 py-6 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen pb-20 bg-[#030303] py-6 px-4 sm:px-6 lg:px-8"
     >
       {/* Top bar */}
       <div className="max-w-6xl mx-auto flex items-center mb-6">
@@ -161,7 +161,7 @@ export default function VideoPlayer() {
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="w-full max-w-4xl bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#0f2027] backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden"
+        className="w-full max-w-4xl bg-zinc-950 border border-zinc-800 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden"
       >
         {/* Video */}
         <div className="relative bg-black">
@@ -176,7 +176,7 @@ export default function VideoPlayer() {
           />
 
           {/* Controls Overlay */}
-          <div className="absolute bottom-2 left-2 right-2 bg-black/40 backdrop-blur-md p-2 rounded-md flex flex-col gap-2">
+          <div className="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-md p-2 rounded-lg flex flex-col gap-2 border border-zinc-700/60">
             {/* Progress Bar */}
             <input
               type="range"
@@ -185,7 +185,7 @@ export default function VideoPlayer() {
               step="0.1"
               value={progress}
               onChange={handleSeek}
-              className="w-full h-2 bg-gray-700 rounded-full cursor-pointer accent-yellow-500"
+              className="w-full h-2 bg-zinc-700 rounded-full cursor-pointer accent-zinc-400"
             />
             <div className="flex justify-between items-center text-white text-sm">
               <span>{formatTime((progress / 100) * duration)}</span>
@@ -193,7 +193,7 @@ export default function VideoPlayer() {
                 {/* Play / Pause */}
                 <button
                   onClick={togglePlay}
-                  className="p-2 rounded-full bg-white/10 hover:bg-white/20"
+                  className="p-2 rounded-2xl bg-zinc-800/80 hover:bg-zinc-700"
                 >
                   {isPlaying ? <FaPause /> : <FaPlay />}
                 </button>
@@ -201,7 +201,7 @@ export default function VideoPlayer() {
                 {/* Volume */}
                 <button
                   onClick={toggleMute}
-                  className="p-2 rounded-full hover:bg-white/10"
+                  className="p-2 rounded-2xl hover:bg-zinc-800/80"
                 >
                   {volume === 0 ? <FaVolumeMute /> : <FaVolumeUp />}
                 </button>
@@ -212,14 +212,14 @@ export default function VideoPlayer() {
                   step="0.01"
                   value={volume}
                   onChange={handleVolumeChange}
-                  className="w-20 h-1 rounded-full accent-yellow-500"
+                  className="w-20 h-1 rounded-full accent-zinc-400"
                 />
 
                 {/* Playback Speed */}
                 <select
                   value={playbackRate}
                   onChange={handlePlaybackRateChange}
-                  className="bg-gray-800 text-white rounded px-2 py-1 text-xs"
+                  className="bg-zinc-900 text-white rounded-xl px-2 py-1 text-xs border border-zinc-700"
                 >
                   <option value="0.5">0.5x</option>
                   <option value="1">1x</option>
@@ -232,7 +232,7 @@ export default function VideoPlayer() {
                 {/* Fullscreen */}
                 <button
                   onClick={toggleFullscreen}
-                  className="p-2 rounded-full hover:bg-white/10"
+                  className="p-2 rounded-2xl hover:bg-zinc-800/80"
                 >
                   {isFullscreen ? <FaCompress /> : <FaExpand />}
                 </button>

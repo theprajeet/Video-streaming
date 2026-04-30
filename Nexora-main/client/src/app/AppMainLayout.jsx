@@ -13,7 +13,7 @@ export default function AppMainLayout() {
   );
 
   return (
-    <div className="flex flex-col   sm:pt-20  min-h-screen bg-[#111827] text-gray-100 overflow-hidden">
+    <div className="flex flex-col sm:pt-20 min-h-screen bg-[#030303] text-gray-100 overflow-hidden">
       {/* Header */}
       <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
 

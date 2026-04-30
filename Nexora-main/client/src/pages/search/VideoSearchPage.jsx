@@ -15,7 +15,7 @@ const VideoSearchPage = () => {
   }, [queryFromUrl]);
 
   return (
-    <div className="min-h-screen bg-[#111827]">
+    <div className="min-h-screen bg-[#030303]">
       <VideoSearch query={query} setQuery={setQuery} />
       <VideoSearchResult query={query} />
     </div>

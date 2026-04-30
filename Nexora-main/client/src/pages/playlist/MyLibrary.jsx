@@ -13,11 +13,8 @@ import {
   FaTrash,
   FaSave,
   FaTimes,
-  FaUserFriends,
-  FaList,
-  FaBookmark,
-  FaThumbsUp,
 } from "react-icons/fa";
+import { FiUsers, FiList, FiBookmark, FiThumbsUp } from "react-icons/fi";
 
 import AllSubscriptions from "../subscribe/AllSubscriptions";
 import UserLikedVideos from "../user/UserLikedVideos";
@@ -82,7 +79,7 @@ const MyLibrary = () => {
   if (error) return <p className="text-red-400 text-center mt-6">{error}</p>;
 
   return (
-    <div className="min-h-screen  bg-[#0f1622] text-gray-100 px-6 pt-6 pb-20">
+    <div className="min-h-screen bg-[#030303] text-gray-100 px-6 pt-6 pb-20">
       {/* Header */}
       <div className="mb-10 flex flex-col md:flex-row justify-between items-center">
         {/* Go Back Button */}
@@ -102,7 +99,7 @@ const MyLibrary = () => {
           </h1>
           <button
             onClick={() => navigate("/create-playlist")}
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow-md font-medium transition-transform transform hover:-translate-y-1"
+            className="bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-white px-4 py-2 rounded-2xl shadow-md font-medium transition-transform transform hover:-translate-y-1"
           >
             + Create Playlist
           </button>
@@ -113,51 +110,51 @@ const MyLibrary = () => {
       <div className="flex justify-center gap-4 mb-8">
         <button
           onClick={() => setActiveSection("subscriptions")}
-          className={`flex items-center justify-center px-6 py-2 rounded-lg font-medium transition ${
+          className={`flex items-center justify-center px-6 py-2 rounded-2xl font-medium transition border ${
             activeSection === "subscriptions"
-              ? "bg-blue-600 text-white shadow-lg hover:bg-blue-700"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              ? "bg-zinc-800 border-zinc-600 text-white shadow-lg hover:bg-zinc-700"
+              : "bg-zinc-900 border-zinc-800 text-gray-300 hover:bg-zinc-800"
           }`}
         >
           {/* Mobile icon */}
-          <FaUserFriends className="md:hidden mr-2" />
+          <FiUsers className="md:hidden mr-2" />
           <span className="hidden md:inline"> Creators</span>
         </button>
         <button
           onClick={() => setActiveSection("Liked")}
-          className={`flex items-center justify-center px-6 py-2 rounded-lg font-medium transition ${
+          className={`flex items-center justify-center px-6 py-2 rounded-2xl font-medium transition border ${
             activeSection === "Liked"
-              ? "bg-blue-600 text-white shadow-lg hover:bg-blue-700"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              ? "bg-zinc-800 border-zinc-600 text-white shadow-lg hover:bg-zinc-700"
+              : "bg-zinc-900 border-zinc-800 text-gray-300 hover:bg-zinc-800"
           }`}
         >
           {/* Mobile icon */}
-          <FaThumbsUp className="md:hidden mr-2" />
+          <FiThumbsUp className="md:hidden mr-2" />
           <span className="hidden md:inline">Liked</span>
         </button>
         <button
           onClick={() => setActiveSection("Saved")}
-          className={`flex items-center justify-center px-6 py-2 rounded-lg font-medium transition ${
+          className={`flex items-center justify-center px-6 py-2 rounded-2xl font-medium transition border ${
             activeSection === "Saved"
-              ? "bg-blue-600 text-white shadow-lg hover:bg-blue-700"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              ? "bg-zinc-800 border-zinc-600 text-white shadow-lg hover:bg-zinc-700"
+              : "bg-zinc-900 border-zinc-800 text-gray-300 hover:bg-zinc-800"
           }`}
         >
           {/* Mobile icon */}
-          <FaBookmark className="md:hidden mr-2" />
+          <FiBookmark className="md:hidden mr-2" />
           <span className="hidden md:inline">Saved</span>
         </button>
 
         <button
           onClick={() => setActiveSection("playlists")}
-          className={`flex items-center justify-center px-6 py-2 rounded-lg font-medium transition ${
+          className={`flex items-center justify-center px-6 py-2 rounded-2xl font-medium transition border ${
             activeSection === "playlists"
-              ? "bg-blue-600 text-white shadow-lg hover:bg-blue-700"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              ? "bg-zinc-800 border-zinc-600 text-white shadow-lg hover:bg-zinc-700"
+              : "bg-zinc-900 border-zinc-800 text-gray-300 hover:bg-zinc-800"
           }`}
         >
           {/* Mobile icon */}
-          <FaList className="md:hidden mr-2" />
+          <FiList className="md:hidden mr-2" />
           <span className="hidden md:inline"> Playlists</span>
         </button>
       </div>
@@ -190,18 +187,18 @@ const MyLibrary = () => {
               {playlists.map((playlist) => (
                 <div
                   key={playlist._id}
-                  className="bg-gradient-to-b from-[#1b2838] to-[#111827] border border-gray-800 rounded-xl shadow-lg p-4 hover:border-blue-500 hover:shadow-blue-500/20 transition-all duration-300"
+                  className="bg-zinc-950 border border-zinc-800 rounded-3xl shadow-lg p-4 hover:border-zinc-600 transition-all duration-300"
                 >
                   {editingId === playlist._id ? (
                     <div className="flex flex-col gap-3">
                       <input
                         type="text"
-                        className="w-full bg-[#0f1622] border border-gray-700 rounded-lg px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-zinc-500"
                         value={editName}
                         onChange={(e) => setEditName(e.target.value)}
                       />
                       <textarea
-                        className="w-full bg-[#0f1622] border border-gray-700 rounded-lg px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-zinc-500"
                         value={editDescription}
                         onChange={(e) => setEditDescription(e.target.value)}
                       />
@@ -214,13 +211,13 @@ const MyLibrary = () => {
                       <div className="flex gap-3 mt-3">
                         <button
                           onClick={() => handleUpdate(playlist._id)}
-                          className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition"
+                          className="flex-1 flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-white px-4 py-2 rounded-2xl transition"
                         >
                           <FaSave /> Save
                         </button>
                         <button
                           onClick={() => setEditingId(null)}
-                          className="flex-1 flex items-center justify-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition"
+                          className="flex-1 flex items-center justify-center gap-2 bg-zinc-700 hover:bg-zinc-600 border border-zinc-600 text-white px-4 py-2 rounded-2xl transition"
                         >
                           <FaTimes /> Cancel
                         </button>
@@ -233,11 +230,11 @@ const MyLibrary = () => {
                           <img
                             src={playlist.thumbnailUrl}
                             alt={playlist.title}
-                            className="w-full h-44 object-cover rounded-lg mb-4 hover:opacity-90 transition"
+                            className="w-full h-44 object-cover rounded-2xl mb-4 hover:opacity-90 transition"
                           />
                         </Link>
                       ) : (
-                        <div className="w-full h-44 bg-gray-800 rounded-lg mb-4 flex items-center justify-center text-gray-500 text-sm">
+                        <div className="w-full h-44 bg-zinc-900 rounded-2xl mb-4 flex items-center justify-center text-gray-500 text-sm">
                           No Thumbnail
                         </div>
                       )}
@@ -245,7 +242,7 @@ const MyLibrary = () => {
                       <div>
                         <Link
                           to={`/playlist/${playlist._id}`}
-                          className="text-lg font-semibold text-blue-400 hover:underline line-clamp-2"
+                          className="text-lg font-semibold text-zinc-200 hover:text-white hover:underline line-clamp-2"
                         >
                           {playlist.title}
                         </Link>
@@ -260,13 +257,13 @@ const MyLibrary = () => {
                       <div className="flex gap-3 mt-4">
                         <button
                           onClick={() => handleEdit(playlist)}
-                          className="flex-1 flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-3 py-2 rounded-lg transition"
+                          className="flex-1 flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-white px-3 py-2 rounded-2xl transition"
                         >
                           <FaEdit /> Edit
                         </button>
                         <button
                           onClick={() => handleDelete(playlist._id)}
-                          className="flex-1 flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg transition"
+                          className="flex-1 flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-red-300 px-3 py-2 rounded-2xl transition"
                         >
                           <FaTrash /> Delete
                         </button>

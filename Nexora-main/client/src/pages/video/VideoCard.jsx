@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaUser, FaEye, FaClock, FaHeart, FaCommentDots } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+import { FiEye, FiClock, FiHeart, FiMessageSquare } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
 
@@ -35,7 +36,7 @@ const VideoCard = ({ video }) => {
       whileHover={{ scale: 1.03, y: -3 }}
       transition={{ duration: 0.3 }}
       onClick={() => navigate(`/video/${video._id}`)}
-      className="bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#0f2027] rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-indigo-500 cursor-pointer group"
+      className="bg-zinc-950 rounded-3xl overflow-hidden shadow-lg border border-zinc-800 hover:border-zinc-600 cursor-pointer group"
     >
       {/* Thumbnail */}
       <div className="relative w-full h-48 bg-gray-700 overflow-hidden">
@@ -85,13 +86,13 @@ const VideoCard = ({ video }) => {
           {/* Stats */}
           <div className="flex justify-between text-sm gap-4 text-gray-400">
             <span className="flex items-center gap-1">
-              <FaHeart className="text-pink-500" /> {video.likesCount || 0}
+                <FiHeart className="text-zinc-300" /> {video.likesCount || 0}
             </span>
             <span className="flex items-center gap-1">
-              <FaEye className="text-blue-400" /> {video.views || 0}
+                <FiEye className="text-zinc-300" /> {video.views || 0}
             </span>
             <span className="flex items-center gap-1">
-              <FaCommentDots className="text-green-400" />{" "}
+                <FiMessageSquare className="text-zinc-300" />{" "}
               {video.commentsCount || 0}
             </span>
           </div>
@@ -104,7 +105,7 @@ const VideoCard = ({ video }) => {
               {video.tags.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="bg-indigo-500/30 text-indigo-200 text-xs px-2 py-1 rounded-full"
+                  className="bg-zinc-800 text-zinc-200 text-xs px-2 py-1 rounded-full"
                 >
                   #{tag}
                 </span>
@@ -112,7 +113,7 @@ const VideoCard = ({ video }) => {
             </div>
           )}
           <div className="flex items-center gap-1 text-xs text-gray-400">
-            <FaClock className="text-[10px]" />{" "}
+            <FiClock className="text-[10px]" />{" "}
             {moment(video.createdAt).fromNow()}
           </div>
         </div>

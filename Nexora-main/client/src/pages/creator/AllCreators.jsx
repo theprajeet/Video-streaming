@@ -26,7 +26,7 @@ const AllCreators = () => {
     );
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto p-6 bg-[#030303] min-h-screen text-gray-100">
       {/* Go Back Button */}
       <button
         onClick={() => navigate(-1)}
@@ -42,7 +42,7 @@ const AllCreators = () => {
           <Link
             key={creator._id}
             to={`/creator/${creator._id}`}
-            className="bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transition-transform transform hover:scale-105 rounded-3xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center text-center"
+            className="bg-zinc-950 border border-zinc-800 hover:border-zinc-600 transition-transform transform hover:scale-105 rounded-3xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center text-center"
           >
             <div className="relative w-24 h-24 mb-4">
               <img
@@ -51,7 +51,7 @@ const AllCreators = () => {
                   "https://cdn-icons-png.flaticon.com/512/149/149071.png"
                 }
                 alt={creator.name}
-                className="w-full h-full rounded-full object-cover ring-2 ring-green-500"
+                className="w-full h-full rounded-full object-cover ring-2 ring-zinc-600"
               />
             </div>
             <h3 className="text-xl font-semibold text-white mb-1">
@@ -60,7 +60,7 @@ const AllCreators = () => {
             <p className="text-gray-400 text-sm mb-3">
               {creator.subscribersCount} subscribers
             </p>
-            <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded-full text-sm font-medium transition">
+            <button className="bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-1.5 rounded-full text-sm font-medium transition border border-zinc-600">
               View Profile
             </button>
           </Link>

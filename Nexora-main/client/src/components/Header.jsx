@@ -54,7 +54,7 @@ function Header({ toggleSidebar }) {
 
   return (
     <>
-      <header className="bg-gradient-to-r from-[#0f1e29] via-[#142f44] to-[#0f1e29] p-2 text-gray-100 fixed top-0 z-50 w-full shadow-md">
+      <header className="bg-black/95 backdrop-blur-xl p-2 text-gray-100 fixed top-0 z-50 w-full shadow-[0_10px_30px_rgba(0,0,0,0.45)] border-b border-zinc-800">
         <div className="max-w-7xl px-2 sm:px-4 flex items-center justify-between">
           {/* Menu + Logo */}
           <div className="flex items-center gap-2">
@@ -62,7 +62,7 @@ function Header({ toggleSidebar }) {
             <button
               onClick={toggleSidebar}
               aria-label="Toggle sidebar"
-              className="hidden lg:flex p-2 rounded-full hover:bg-gray-700 hover:text-amber-400 transition-all duration-200 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+              className="hidden lg:flex p-2 rounded-2xl hover:bg-zinc-800 hover:text-gray-100 transition-all duration-200 focus:ring-2 focus:ring-zinc-600 focus:outline-none"
             >
               <FaBars className="text-xl lg:text-2xl" />
             </button>
@@ -72,7 +72,7 @@ function Header({ toggleSidebar }) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <h1 className="text-2xl sm:text-4xl font-black uppercase bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-[0_0_18px_#facc15] tracking-wider">
+              <h1 className="text-2xl sm:text-4xl font-black uppercase bg-gradient-to-r from-zinc-100 via-gray-300 to-zinc-500 bg-clip-text text-transparent tracking-wider">
                 Nexora
               </h1>
             </motion.div>
@@ -82,7 +82,7 @@ function Header({ toggleSidebar }) {
           <div className="hidden sm:flex flex-1 mx-2 sm:mx-4 max-w-2xl">
             <form
               onSubmit={handleSearch}
-              className="flex rounded-md overflow-hidden border border-gray-700 bg-gray-800 w-full"
+              className="flex rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900/80 w-full"
             >
               <input
                 type="text"
@@ -93,7 +93,7 @@ function Header({ toggleSidebar }) {
               />
               <button
                 type="submit"
-                className="bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-500 text-gray-900 font-semibold px-4 py-2 transition-all duration-300 hover:scale-[1.05] hover:brightness-110"
+                className="bg-zinc-800 text-gray-200 font-semibold px-4 py-2 transition-all duration-300 hover:bg-zinc-700"
               >
                 <FaSearch className="w-5 h-5" />
               </button>
@@ -105,7 +105,7 @@ function Header({ toggleSidebar }) {
             {/* Mobile search icon */}
             <button
               onClick={() => setIsMobileSearchOpen(!isMobileSearchOpen)}
-              className="sm:hidden p-2 rounded-full hover:bg-gray-700 hover:text-amber-400 transition-all duration-200 focus:ring-2 focus:ring-amber-400 focus:outline-none"
+              className="sm:hidden p-2 rounded-2xl hover:bg-zinc-800 hover:text-gray-100 transition-all duration-200 focus:ring-2 focus:ring-zinc-600 focus:outline-none"
             >
               <FaSearch className="w-6 h-6 text-gray-200" />
             </button>
@@ -114,7 +114,7 @@ function Header({ toggleSidebar }) {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                className="flex items-center justify-center rounded-full p-1 sm:p-2 hover:bg-gray-700 hover:text-amber-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                className="flex items-center justify-center rounded-2xl p-1 sm:p-2 hover:bg-zinc-800 hover:text-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-zinc-600"
               >
                 {currentUser?.profileImage ? (
                   <img
@@ -136,13 +136,13 @@ function Header({ toggleSidebar }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-48 bg-gray-900 text-gray-100 rounded-lg shadow-xl py-2 z-50 border border-gray-700"
+                    className="absolute right-0 mt-2 w-52 bg-zinc-950 text-gray-100 rounded-2xl shadow-xl py-2 z-50 border border-zinc-800"
                   >
                     {currentUser ? (
                       <>
                         <Link
                           to="/user-account"
-                          className="block px-4 py-2 text-sm hover:bg-gray-700 hover:text-amber-400"
+                          className="block px-4 py-2 text-sm rounded-xl mx-2 hover:bg-zinc-800 hover:text-white"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
                           Your Account
@@ -150,14 +150,14 @@ function Header({ toggleSidebar }) {
                         {currentUser.role !== "creator" && (
                           <Link
                             to="/become-creator"
-                            className="block px-4 py-2 text-sm hover:bg-gray-700 hover:text-amber-400"
+                            className="block px-4 py-2 text-sm rounded-xl mx-2 hover:bg-zinc-800 hover:text-white"
                             onClick={() => setIsUserMenuOpen(false)}
                           >
                             Become a Creator
                           </Link>
                         )}
                         <button
-                          className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-700 hover:text-red-400"
+                          className="block w-[calc(100%-1rem)] mx-2 text-left px-4 py-2 text-sm rounded-xl hover:bg-zinc-800 hover:text-red-400"
                           onClick={handleLogout}
                         >
                           <FaSignOutAlt className="inline mr-2" /> Sign Out
@@ -166,7 +166,7 @@ function Header({ toggleSidebar }) {
                     ) : (
                       <Link
                         to="/login"
-                        className="block px-4 py-2 text-sm hover:bg-gray-700 hover:text-amber-400"
+                        className="block px-4 py-2 text-sm rounded-xl mx-2 hover:bg-zinc-800 hover:text-white"
                         onClick={() => setIsUserMenuOpen(false)}
                       >
                         Sign In
@@ -188,11 +188,11 @@ function Header({ toggleSidebar }) {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="sm:hidden w-full pt-14 px-2 pb-2 bg-gray-900 border-b border-gray-700"
+            className="sm:hidden w-full pt-14 px-2 pb-2 bg-black/95 border-b border-zinc-800"
           >
             <form
               onSubmit={handleSearch}
-              className="flex w-full rounded-md overflow-hidden border border-gray-700 bg-gray-800"
+              className="flex w-full rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900/80"
             >
               <input
                 type="text"
@@ -203,7 +203,7 @@ function Header({ toggleSidebar }) {
               />
               <button
                 type="submit"
-                className="flex-shrink-0 bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-500 text-gray-900 font-semibold px-4 py-2 transition-all duration-300 hover:scale-[1.05] hover:brightness-110"
+                className="flex-shrink-0 bg-zinc-800 text-gray-200 font-semibold px-4 py-2 transition-all duration-300 hover:bg-zinc-700"
               >
                 <FaSearch className="w-5 h-5" />
               </button>
