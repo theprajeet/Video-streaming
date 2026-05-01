@@ -207,7 +207,7 @@ const UpdateUser = () => {
             <button
               type="submit"
               disabled={updateUserLoading}
-              className={`w-full flex justify-center py-2 px-4 rounded-md shadow-sm text-sm font-medium bg-gradient-to-r from-cyan-500 to-teal-400 text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+              className={`w-full flex justify-center py-2 px-4 rounded-md shadow-sm text-sm font-medium bg-gradient-to-r from-cyan-500 to-teal-400 text-white-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
                 updateUserLoading ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >

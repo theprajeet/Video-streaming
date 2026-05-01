@@ -252,7 +252,7 @@ const handleSubmit = async (e) => {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-3 rounded-lg font-medium bg-gradient-to-r from-cyan-500 to-teal-400 text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 shadow-md ${
+            className={`w-full py-3 rounded-lg font-medium bg-gradient-to-r from-cyan-500 to-teal-400 text-white-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 shadow-md ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
