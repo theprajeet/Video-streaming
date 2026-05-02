@@ -148,7 +148,7 @@ const handleSubmit = async (e) => {
 
           {/* Tags */}
           <div>
-            <label className="block text-gray-300 font-medium mb-1">
+            <label className="block text-white-300 font-medium mb-1">
               Tags (comma-separated)
             </label>
             <input
